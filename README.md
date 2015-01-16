@@ -8,24 +8,6 @@ Requirements
 #### packages
 - `privoxy` - privoxy-nativex needs privoxy to configure the erb template.
 
-Attributes
-----------
-#### privoxy-nativex::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['privoxy-nativex']['listen_address']</tt></td>
-    <td>string</td>
-    <td>the private ip address of the node</td>
-    <td><tt>node[ipaddress]</tt></td>
-  </tr>
-</table>
-
 Usage
 -----
 #### privoxy-nativex::default
