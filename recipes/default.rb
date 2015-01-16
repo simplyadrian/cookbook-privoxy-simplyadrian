@@ -9,10 +9,9 @@
 
 include_recipe	"privoxy"
 
-template "/etc/privoxy/config" do
-  source "privoxy.conf.erb"
-  owner  node['privoxy']['user']
-  group  node['privoxy']['group']
-  mode   00744
-  notifies :restart, "service[privoxy]", :delayed
+begin
+  r = resources(:template => "/etc/privoxy/config")
+  r.cookbook "privoxy-nativex"
+rescue Chef::Exceptions::ResourceNotFound
+  Chef::Log.warn "could not find template to override!"
 end
